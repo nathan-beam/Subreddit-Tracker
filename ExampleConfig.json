@@ -1,0 +1,9 @@
+{
+	"username": "MyUsername",
+	"password": "MyPassword",
+	"client_id": "MyClientId",
+	"secret": "MySecret",
+	"subreddits":  ["askreddit",
+					"pics",
+					"gaming"]
+}
