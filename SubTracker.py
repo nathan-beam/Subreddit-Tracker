@@ -20,7 +20,7 @@ def init():
 	reddit = praw.Reddit(client_id=settings["client_id"],
 						 client_secret=settings["secret"],
 						 password=settings["password"],
-						 user_agent='Script by /u/morpen: Hate sub tracker',
+						 user_agent='Script by /u/morpen: Sub tracker',
 						 username=settings["username"])
 
 def get_subreddit_name():
