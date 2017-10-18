@@ -33,12 +33,12 @@ def get_subreddit_name():
 def monitor_comments(subreddit):
 	for comment in subreddit.stream.comments():
 		if not comment.author.name.lower() == "automoderator":
-			queue.put((comment.author.name.lower(), comment.subreddit.display_name.lower(), "https://np.reddit.com/"+comment.permalink()))
+			queue.put((comment.author.name.lower(), comment.subreddit.display_name.lower(), "https://np.reddit.com"+comment.permalink()))
 		
 def monitor_submissions(subreddit):
 	for submission in subreddit.stream.submissions():
 		if not submission.author.name.lower() == "automoderator":
-			queue.put((submission.author.name.lower(), submission.subreddit.display_name.lower(), "https://np.reddit.com/"+submission.permalink))
+			queue.put((submission.author.name.lower(), submission.subreddit.display_name.lower(), "https://np.reddit.com"+submission.permalink))
 		
 def insertion_listener():
 	db = sqlite3.connect('HST.db')
