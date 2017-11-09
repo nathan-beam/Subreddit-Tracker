@@ -33,7 +33,7 @@ def get_subreddit_name():
 def monitor_comments(subreddit):
 	for comment in subreddit.stream.comments():
 		if not comment.author.name.lower() == "automoderator":
-			queue.put((comment.author.name.lower(), comment.subreddit.display_name.lower(), "https://np.reddit.com"+comment.permalink()))
+			queue.put((comment.author.name.lower(), comment.subreddit.display_name.lower(), "https://np.reddit.com"+comment.permalink))
 		
 def monitor_submissions(subreddit):
 	for submission in subreddit.stream.submissions():
@@ -53,7 +53,7 @@ def create_table(c):
 		create_users_table = """ CREATE TABLE IF NOT EXISTS users (
 									username varchar,
 									subreddit varchar,
-									link varchar,
+									link varchar
 								); """
 		c.execute(create_users_table)
 	except Error as e:

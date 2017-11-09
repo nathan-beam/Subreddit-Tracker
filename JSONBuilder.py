@@ -28,7 +28,7 @@ cur.execute("SELECT distinct(subreddit) FROM users")
 rows = cur.fetchall()
 sub_list = []
 for row in rows:
-	cur.execute('SELECT username,url FROM users where subreddit=?',row)
+	cur.execute('SELECT username,link FROM users where subreddit=?',row)
 	users = cur.fetchall()
 	sub = Object()
 	sub.Name = row[0]
